@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Welcome from './Welcome'
-import Authentication from './Authentication'
+// import Authentication from './Authentication'
 
 
 
 function App() {
   return (
-    <Fragment>
+    <div className="app">
       <Welcome />
-
-    </Fragment>
+    </div>
   );
 }
+
 
 export default App;
