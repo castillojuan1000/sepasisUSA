@@ -1,0 +1,1 @@
+//todo: this is where i'm having <Addpost> and <post> components which will be shown only after the user had been authenticated

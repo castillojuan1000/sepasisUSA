@@ -1,0 +1,1 @@
+//todo: this is a single post component that will go inside Posts compoent and will be shown only after user has been authenticated

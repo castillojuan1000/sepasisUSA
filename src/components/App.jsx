@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
+import Welcome from './Welcome'
+import Authentication from './Authentication'
 
 
 
 function App() {
   return (
     <Fragment>
-      <h1>App page</h1>
+      <Welcome />
+
     </Fragment>
   );
 }
