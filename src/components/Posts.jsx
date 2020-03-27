@@ -1,1 +1,13 @@
-//todo: this is where i'm having <Addpost> and <post> components which will be shown only after the user had been authenticated
+import React, { Fragment } from 'react';
+import AddPost from './AddPost';
+import Post from './Post';
+
+export default function Posts() {
+  return (
+    <Fragment>
+      <AddPost />
+      <Post />
+      <Post />
+    </Fragment>
+  )
+}
