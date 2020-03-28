@@ -6,8 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
-// import { firestore, auth } from '../firebase'
+import { firestore, auth } from '../firebase'
 
 
 
@@ -32,11 +31,12 @@ export default function AddPost() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('this works')
+
 
     //todo: this will come from firebase 
     // const { uid, displayName, photoURL, email } = auth.currentUser;
     const post = {
+      background: newGradient(),
       title: title,
       content: content,
       user: {
@@ -44,10 +44,15 @@ export default function AddPost() {
         displayName: 'Juan Castillo',
         email: 'castillojuan1000@gmail.com',
         photoURL: 'none4Now'
-      }
+      },
+      comments: 0,
+      likes: 0,
+      dislikes: 0,
+      createdAt: new Date()
     }
-
     console.log(post)
+
+    firestore.collection('posts').add(post)
 
 
     //todo: this will come from firebase
@@ -58,7 +63,7 @@ export default function AddPost() {
 
   }
 
-  console.log(title)
+
 
 
   return (
@@ -171,3 +176,21 @@ MyButtonRaw.propTypes = {
 };
 
 const MyButton = withStyles(styles)(MyButtonRaw);
+
+
+//? will generate a random gradient color 
+function newGradient() {
+  var c1 = {
+    r: Math.floor(Math.random() * 255),
+    g: Math.floor(Math.random() * 255),
+    b: Math.floor(Math.random() * 255)
+  };
+  var c2 = {
+    r: Math.floor(Math.random() * 255),
+    g: Math.floor(Math.random() * 255),
+    b: Math.floor(Math.random() * 255)
+  };
+  c1.rgb = 'rgb(' + c1.r + ',' + c1.g + ',' + c1.b + ')';
+  c2.rgb = 'rgb(' + c2.r + ',' + c2.g + ',' + c2.b + ')';
+  return 'radial-gradient(at top left, ' + c1.rgb + ', ' + c2.rgb + ')';
+}
