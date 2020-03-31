@@ -1,1 +1,0 @@
-//todo: firebase.onAuthStateChange().then(userAuth => {setState(userAuth )}) needs to go here once we have authenticated the user

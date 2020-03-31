@@ -6,7 +6,10 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { firestore, auth } from '../firebase'
+import { firestore, auth } from '../firebase';
+
+
+
 
 
 
@@ -18,8 +21,6 @@ export default function AddPost() {
   const [content, setContent] = useState('')
 
 
-  //todo: this will come from firebase 
-  // const { uid, displayName, photoURL, email } = auth.currentUser;
 
   const handleTitle = (e) => {
     setTitle(e.target.value)
@@ -34,16 +35,19 @@ export default function AddPost() {
 
 
     //todo: this will come from firebase 
-    // const { uid, displayName, photoURL, email } = auth.currentUser;
+    const { uid, displayName, photoURL, email } = auth.currentUser || {};
+
+    console.log(displayName)
+
     const post = {
       background: newGradient(),
       title: title,
       content: content,
       user: {
-        uid: '123',
-        displayName: 'Juan Castillo',
-        email: 'castillojuan1000@gmail.com',
-        photoURL: 'none4Now'
+        uid: uid,
+        displayName: displayName,
+        email: email,
+        photoURL: photoURL
       },
       comments: 0,
       likes: 0,
@@ -55,9 +59,7 @@ export default function AddPost() {
     firestore.collection('posts').add(post)
 
 
-    //todo: this will come from firebase
-    // firestore.collection('posts').add(post)
-    //set the state back to empty string
+
     setTitle('')
     setContent('')
 
@@ -137,7 +139,8 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto ',
     maxWidth: "80%",
     color: theme.palette.text.secondary,
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(3)
   },
 }));
 

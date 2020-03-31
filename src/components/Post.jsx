@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import ProfilePic from '../photos/welcome.jpg'
 import Avatar from '@material-ui/core/Avatar';
 import { firestore } from '../firebase'
 import moment from 'moment';
+import { UsersContext } from '../providers/UsersProvider'
 
 //?Icons 
 import IconButton from '@material-ui/core/IconButton';
@@ -17,9 +17,17 @@ import CommentSharpIcon from '@material-ui/icons/CommentSharp';
 import ThumbDownSharpIcon from '@material-ui/icons/ThumbDownSharp';
 import { blue, red } from '@material-ui/core/colors';
 
+
+const deleteOnlyUser = (currentUser, postAuthor) => {
+  if (!currentUser) return false;
+
+  return currentUser.uid === postAuthor.uid;
+}
+
+
 export default function Post({ title, content, user, likes, dislikes, createdAt, comments, id, background }) {
   const classes = useStyles();
-
+  console.log(user.displayName)
 
   const docRef = firestore.doc(`posts/${id}`)
   const deleteDoc = () => docRef.delete();
@@ -48,8 +56,17 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
   //todo: capitalizing!!
   const capitalizeTitle = title.charAt(0).toUpperCase() + title.slice(1)
-  const capitalizeUser = user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)
+  const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
   const capitalizeContent = content.charAt(0).toUpperCase() + content.slice(1)
+  const profilePic = user.photoURL;
+
+
+
+
+
+
+  const currentUser = useContext(UsersContext)
+
 
 
 
@@ -64,7 +81,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
           <Grid item>
             <ButtonBase className={classes.image}>
-              <Avatar alt="Remy Sharp" src={ProfilePic} className={classes.avatar} />
+              <Avatar alt="Remy Sharp" src={profilePic} className={classes.avatar} />
             </ButtonBase>
           </Grid>
 
@@ -111,13 +128,16 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                 </Grid>
 
 
+                {
+                  deleteOnlyUser(currentUser, user) &&
+                  <Grid item>
+                    <IconButton
+                      onClick={deleteDoc}>
+                      <DeleteForeverSharpIcon style={{ color: red[500] }} />
+                    </IconButton>
+                  </Grid>
+                }
 
-                <Grid item>
-                  <IconButton
-                    onClick={deleteDoc}>
-                    <DeleteForeverSharpIcon style={{ color: red[500] }} />
-                  </IconButton>
-                </Grid>
 
               </Grid>
             </Grid>

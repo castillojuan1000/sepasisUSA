@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { BrowserRouter as Router } from "react-router-dom";
 import PostsProvider from './providers/PostsProvider'
+import UsersProvider from './providers/UsersProvider'
 
 
 
@@ -10,8 +11,9 @@ ReactDOM.render(
 
   <Router>
     <PostsProvider>
-
-      <App />
+      <UsersProvider>
+        <App />
+      </UsersProvider>
     </PostsProvider>
   </Router>
   ,

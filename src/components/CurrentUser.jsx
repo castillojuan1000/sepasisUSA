@@ -1,1 +1,0 @@
-//todo: this component will show up after user has been authenticated together with the Posts component
