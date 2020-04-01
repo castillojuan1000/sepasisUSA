@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom'
 
 
 const CurrentUser = ({ uid, displayName, photoURL, email, createdAt }) => {
-  console.log(displayName)
+
 
   const cardStyles = useStyles();
   const mediaStyles = useSlopeCardMediaStyles();

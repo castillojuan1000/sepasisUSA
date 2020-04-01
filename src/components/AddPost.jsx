@@ -37,7 +37,7 @@ export default function AddPost() {
     //todo: this will come from firebase 
     const { uid, displayName, photoURL, email } = auth.currentUser || {};
 
-    console.log(displayName)
+
 
     const post = {
       background: newGradient(),

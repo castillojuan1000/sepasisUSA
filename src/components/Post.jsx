@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { firestore } from '../firebase'
 import moment from 'moment';
 import { UsersContext } from '../providers/UsersProvider'
+import { Link } from 'react-router-dom'
 
 //?Icons 
 import IconButton from '@material-ui/core/IconButton';
@@ -27,7 +28,7 @@ const deleteOnlyUser = (currentUser, postAuthor) => {
 
 export default function Post({ title, content, user, likes, dislikes, createdAt, comments, id, background }) {
   const classes = useStyles();
-  console.log(user.displayName)
+
 
   const docRef = firestore.doc(`posts/${id}`)
   const deleteDoc = () => docRef.delete();
@@ -55,10 +56,10 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
 
   //todo: capitalizing!!
-  const capitalizeTitle = title.charAt(0).toUpperCase() + title.slice(1)
+  const capitalizeTitle = title ? title.charAt(0).toUpperCase() + title.slice(1) : '';
   const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
-  const capitalizeContent = content.charAt(0).toUpperCase() + content.slice(1)
-  const profilePic = user.photoURL;
+  const capitalizeContent = content ? content.charAt(0).toUpperCase() + content.slice(1) : '';
+  const profilePic = user.photoURL ? user.photoURL : null;
 
 
 
@@ -90,9 +91,11 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
             <Grid item xs container direction="column" justify="center"
               alignItems="center" spacing={2}>
               <Grid item xs>
-                <Typography gutterBottom variant="h5">
-                  {capitalizeTitle}
-                </Typography>
+                <Link to={`/posts/${id}`} style={{ textDecoration: 'none' }}>
+                  <Typography gutterBottom variant="h5">
+                    {capitalizeTitle}
+                  </Typography>
+                </Link>
                 <Typography variant="body2" gutterBottom>
                   {capitalizeContent}
                 </Typography>

@@ -11,9 +11,6 @@ import { UsersContext } from '../providers/UsersProvider'
 
 export default function Authentication() {
   const user = useContext(UsersContext);
-  console.log({
-    Authentication: user
-  })
   return <div>{user ? <CurrentUser  {...user} /> : <SignIn />}</div>
 }
 
