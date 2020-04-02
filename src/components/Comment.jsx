@@ -1,27 +1,47 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 import moment from 'moment';
 
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+
+
+
 const Comment = ({ content, user, createdAt }) => {
+  const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
+
   return (
-    <article className="Comment">
-      <span className="Comment--author">{user.displayName}</span>
-      <span className="Comment--content">{content}</span>
-      <span className="Comment--timestamp">{moment(createdAt).calendar()}</span>
-    </article>
+    <Fragment>
+
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src={`${user.photoURL}`} />
+        </ListItemAvatar>
+        <ListItemText
+          primary={capitalizeUser}
+          secondary={
+            <React.Fragment>
+
+              {` — ${content}`}
+              <br />
+              <span style={{ color: '#7CB341' }}>
+                {moment(createdAt).calendar()}
+              </span>
+            </React.Fragment>
+          }
+
+        />
+
+      </ListItem>
+      <Divider variant="inset" component="li" />
+    </Fragment>
+
   );
 };
 
-Comment.defaultProps = {
-  title: 'An Incredibly Hot Take',
-  content:
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus est aut dolorem, dolor voluptatem assumenda possimus officia blanditiis iusto porro eaque non ab autem nihil! Alias repudiandae itaque quo provident.',
-  user: {
-    displayName: 'Bill Murray',
-    email: 'billmurray@mailinator.com',
-    photoURL: 'https://www.fillmurray.com/300/300',
-  },
-  createdAt: new Date(),
-};
+
 
 export default Comment;
+

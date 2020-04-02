@@ -124,9 +124,12 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                 </Grid>
 
                 <Grid item>
-                  <IconButton>
-                    <CommentSharpIcon style={{ color: blue[500] }} />
-                  </IconButton>
+                  <Link to={`/posts/${id}`} style={{ textDecoration: 'none' }}>
+
+                    <IconButton>
+                      <CommentSharpIcon style={{ color: blue[500] }} />
+                    </IconButton>
+                  </Link>
                   <span style={{ color: 'rgb(32,155,229)' }}>{comments}</span>
                 </Grid>
 

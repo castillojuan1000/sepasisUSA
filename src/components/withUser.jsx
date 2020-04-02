@@ -1,7 +1,7 @@
 import React from 'react';
 import { UsersContext } from '../providers/UsersProvider';
 
-
+//? this is optional but it will be helpful when you come back to you code later
 const getDisplayName = (WrappedComponent) => {
   return WrappedComponent.getDisplayName || WrappedComponent.name || ''
 }
@@ -16,6 +16,7 @@ const withUser = Component => {
       </UsersContext.Consumer>
     )
   }
+  //? this is optional but it will be helpful when you come back to you code later
   WrappedComponent.displayName = `withUser(${getDisplayName(WrappedComponent)})`
 
   return WrappedComponent;

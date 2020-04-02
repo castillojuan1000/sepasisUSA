@@ -35,6 +35,8 @@ class PostPage extends Component {
 
     this.unsubscribeFromComments = this.commentsRef.onSnapshot(snapshot => {
       const comments = snapshot.docs.map(collectIdAndDocs)
+      //todo: we can crate a commentsProvider to get the comments attributes? 
+
       this.setState({ comments: comments })
     })
   }
@@ -45,6 +47,8 @@ class PostPage extends Component {
   }
 
   createComment = (comment) => {
+    console.log(comment)
+    //? user is comming from withUser Component/ gettign user from userProvider/ passing down in props 
     const { user } = this.props;
     this.commentsRef.add({
       ...comment,
@@ -52,16 +56,18 @@ class PostPage extends Component {
     })
   }
 
+
+
   render() {
-    const { comments, post } = this.state;
+
+    const { comments, post, commentsCount } = this.state;
     return (
       <section>
         {
-          post && <Post {...post} />
+          post && <Post {...post} commentsCount={commentsCount} />
         }
         <Comments
           comments={comments}
-          // postId={post.id}
           onCreate={this.createComment}
         />
       </section>
