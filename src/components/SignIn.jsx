@@ -26,8 +26,7 @@ export default function SignIn() {
 
 
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
+
       var errorMessage = error.message;
       console.error(errorMessage)
       // ...
@@ -106,10 +105,17 @@ export default function SignIn() {
           >
             google
           </Button>
-          <Grid container>
-            <Grid item>
+          <Grid container direction="row"
+            justify="space-between"
+            alignItems="center">
+            <Grid item >
               <LinkFromRouter href="#" variant="body2" to="/signUp">
-                {"Don't have an account? Sign Up"}
+                {"Do not an account? Sign Up"}
+              </LinkFromRouter>
+            </Grid>
+            <Grid item >
+              <LinkFromRouter href="#" variant="body2" to="/" >
+                {"Back Home"}
               </LinkFromRouter>
             </Grid>
           </Grid>

@@ -34,6 +34,7 @@ export default function AddComment({ onCreate }) {
 
 
   console.log(state)
+
   const { content } = state;
   return (
     <form

@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { auth } from '../firebase'
 import { createUserProfileDocument } from '../firebase'
+import { Link as LinkFromRouter } from "react-router-dom";
 
 
 export default function SignUp() {
@@ -155,11 +156,18 @@ export default function SignUp() {
           >
             Sign Up
           </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
+          <Grid container direction="row"
+            justify="space-between"
+            alignItems="center">
+            <Grid item >
+              <LinkFromRouter href="#" variant="body2" to="/signIn">
+                {"Already have an account? Sign In"}
+              </LinkFromRouter>
+            </Grid>
+            <Grid item >
+              <LinkFromRouter href="#" variant="body2" to="/" >
+                {"Back Home"}
+              </LinkFromRouter>
             </Grid>
           </Grid>
         </form>
