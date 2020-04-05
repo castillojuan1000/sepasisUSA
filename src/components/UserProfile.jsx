@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { auth, firestore, storage } from '../firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import CurrentUser from './CurrentUser/CurrentUser'
 
 import '../UserProfile.css'
 
@@ -61,59 +62,79 @@ const UserProfile = () => {
   }
 
   return (
-
-    <form
-      className={classes.root}
-      onSubmit={handleSubmit}>
-
-      <Grid container
+    <div style={{ background: 'rgba(128,128,128, 0.5)', height: '100vh' }}>
+      <Grid
+        style={{
+          paddingTop: '10vh'
+        }}
+        container
         spacing={3}
         direction="row"
         justify="center"
         alignItems="center">
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <TextField
 
-              label="Name"
-              style={{ margin: 8 }}
-              placeholder="Change Name"
-              fullWidth
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant="outlined"
-              value={displayName}
-              name="content"
-              onChange={handleDisplayName}
-            />
-
-            <div className="file-upload">
-              <div className="file-select">
-                <div className="file-select-button" id="fileName">
-                  Choose File
-                </div>
-                <div className="file-select-name" id="noFile">
-                  No file chosen...
-                </div>
-                <input type="file" nameName="chooseFile" id="chooseFile" ref={ref => imageInput = ref} />
-              </div>
-            </div>
-
-            <MyButton
-              type="submit"
-              value="Submit"
-              color="blue"
-            >
-              Submit
-            </MyButton>
-          </Paper>
+          <CurrentUser />
         </Grid>
 
+        <Grid item xs={12}>
+
+          <form
+            className={classes.root}
+            onSubmit={handleSubmit}>
+
+            <Grid container
+              spacing={3}
+              direction="row"
+              justify="center"
+              alignItems="center">
+              <Grid item xs={12}>
+                <Paper className={classes.paper}>
+                  <TextField
+
+                    label="Name"
+                    style={{ margin: 8 }}
+                    placeholder="Change Name"
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                    value={displayName}
+                    name="content"
+                    onChange={handleDisplayName}
+                  />
+
+                  <div className="file-upload">
+                    <div className="file-select">
+                      <div className="file-select-button" id="fileName">
+                        Choose File
+                </div>
+                      <div className="file-select-name" id="noFile">
+                        No file chosen...
+                </div>
+                      <input type="file" nameName="chooseFile" id="chooseFile" ref={ref => imageInput = ref} />
+                    </div>
+                  </div>
+
+                  <MyButton
+                    type="submit"
+                    value="Submit"
+                    color="blue"
+                  >
+                    Submit
+            </MyButton>
+                </Paper>
+              </Grid>
+
+            </Grid>
+
+          </form>
+        </Grid>
       </Grid>
 
-    </form>
+    </div>
   )
 }
 
@@ -131,10 +152,10 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     margin: 'auto ',
-    maxWidth: "80%",
+    maxWidth: "50%",
     color: theme.palette.text.secondary,
     marginBottom: theme.spacing(3),
-    marginTop: theme.spacing(3)
+    // marginTop: theme.spacing(3)
   },
 }));
 

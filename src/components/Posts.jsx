@@ -4,6 +4,7 @@ import Post from './Post';
 import { PostsContext } from '../providers/PostsProvider'
 
 
+
 export default function Posts() {
   const posts = useContext(PostsContext)
 
@@ -12,11 +13,16 @@ export default function Posts() {
   })
 
   return (
-    <Fragment>
+
+    <div style={{ background: 'rgba(128,128,128, 0.5)' }}>
+
       <AddPost />
       {
         sortedPosts.map(post => <Post {...post} key={post.id} />)
       }
-    </Fragment>
+    </div>
+
+
+
   )
 }

@@ -70,17 +70,17 @@ export default CurrentUser;
 
 const useStyles = makeStyles(() => ({
   root: {
-    maxWidth: 304,
+    maxWidth: '50%',
     margin: "auto"
   },
   content: {
-    padding: 24
+    padding: 55
   },
   avatar: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     border: "2px solid #fff",
-    margin: "-48px 32px 0 auto",
+    margin: "-75px 50px 0 auto",
     "& > img": {
       margin: 0
     }

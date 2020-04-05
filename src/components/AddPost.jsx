@@ -12,9 +12,6 @@ import { firestore, auth } from '../firebase';
 
 
 
-
-
-
 export default function AddPost() {
   const classes = useStyles();
   const [title, setTitle] = useState('')
@@ -71,14 +68,21 @@ export default function AddPost() {
   return (
     <form
       className={classes.root}
-      onSubmit={handleSubmit}>
+      onSubmit={handleSubmit}
+    >
       <Grid container
         spacing={3}
         direction="row"
         justify="center"
         alignItems="center">
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
+          <Paper
+            className={classes.paper}
+            style={{
+              background: `linear-gradient(49deg, rgba(184,40,45,0.742734593837535) 
+            0%, rgba(193,214,41,0.6951155462184874) 33%, rgba(252,176,69,1) 100%)`
+            }}
+          >
             <TextField
 
               label="Title"

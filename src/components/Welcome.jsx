@@ -44,7 +44,7 @@ export default function Welcome() {
   return (
     <div className="homepage" style={backgroundStyle}>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Grid
           style={{
             paddingTop: '20vh'
@@ -66,32 +66,41 @@ export default function Welcome() {
                 unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
                 dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
               </Typography>
-              <Grid item xs={12} sm={6}>
-                <Link to='/signIn' style={{ textDecoration: 'none', color: 'white' }}>
+              <Grid container
 
-                  <MyButton
-                    type="submit"
-                    value="Submit"
-                    color="blue"
-                  >
-                    sign in
+                direction="row"
+                justify="center"
+                alignItems="center">
+
+                <Grid item xs={12} sm={6}>
+                  <Link to='/signIn'
+                    style={{ textDecoration: 'none', color: 'white' }}>
+
+                    <MyButton
+                      type="submit"
+                      value="Submit"
+                      color="blue"
+                    >
+                      sign in
                   </MyButton>
-                </Link>
+                  </Link>
 
-              </Grid>
-              <Grid item xs={12} sm={6}>
+                </Grid>
+                <Grid item xs={12} sm={6}>
 
-                <Link to='/signUp' style={{ textDecoration: 'none', color: 'white' }}>
+                  <Link to='/signUp'
+                    style={{ textDecoration: 'none', color: 'white' }}>
 
-                  <MyButton
-                    type="submit"
-                    value="Submit"
-                    color="red"
-                  >
-                    sign up
+                    <MyButton
+                      type="submit"
+                      value="Submit"
+                      color="red"
+                    >
+                      sign up
                   </MyButton>
-                </Link>
+                  </Link>
 
+                </Grid>
               </Grid>
             </Paper>
           </Grid>
