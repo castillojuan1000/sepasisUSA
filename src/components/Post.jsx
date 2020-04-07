@@ -81,9 +81,12 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
           alignItems="center" spacing={2}>
 
           <Grid item>
-            <ButtonBase className={classes.image}>
-              <Avatar alt="Remy Sharp" src={profilePic} className={classes.avatar} />
-            </ButtonBase>
+            <Link to='/profile'>
+
+              <ButtonBase className={classes.image}>
+                <Avatar alt="Remy Sharp" src={profilePic} className={classes.avatar} />
+              </ButtonBase>
+            </Link>
           </Grid>
 
 
@@ -91,7 +94,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
             <Grid item xs container direction="column" justify="center"
               alignItems="center" spacing={2}>
               <Grid item xs>
-                <Link to={`/posts/${id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/posts/${id}`} style={{ textDecoration: 'none', color: 'black' }}>
                   <Typography gutterBottom variant="h5">
                     {capitalizeTitle}
                   </Typography>

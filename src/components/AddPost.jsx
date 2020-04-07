@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { firestore, auth } from '../firebase';
-
+import { UsersContext } from '../providers/UsersProvider'
 
 
 
@@ -16,7 +16,7 @@ export default function AddPost() {
   const classes = useStyles();
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-
+  const user = useContext(UsersContext);
 
 
   const handleTitle = (e) => {
@@ -32,7 +32,8 @@ export default function AddPost() {
 
 
     //todo: this will come from firebase 
-    const { uid, displayName, photoURL, email } = auth.currentUser || {};
+    // const { uid, displayName, photoURL, email } = auth.currentUser || {};
+    const { uid, displayName, photoURL, email } = user;
 
 
 

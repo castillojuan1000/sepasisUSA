@@ -14,7 +14,7 @@ export default function Posts() {
 
   return (
 
-    <div style={{ background: 'rgba(128,128,128, 0.5)' }}>
+    <div>
 
       <AddPost />
       {

@@ -62,7 +62,10 @@ class PostPage extends Component {
 
     const { comments, post, commentsCount } = this.state;
     return (
-      <section>
+      <section style={{
+        marginTop: '5vh',
+
+      }}>
         {
           post && <Post {...post} commentsCount={commentsCount} />
         }

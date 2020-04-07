@@ -13,7 +13,7 @@ const Comment = ({ content, user, createdAt }) => {
   const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
 
   return (
-    <Fragment>
+    <Fragment >
 
       <ListItem alignItems="flex-start">
         <ListItemAvatar>

@@ -62,22 +62,23 @@ const UserProfile = () => {
   }
 
   return (
-    <div style={{ background: 'rgba(128,128,128, 0.5)', height: '100vh' }}>
+    <div >
       <Grid
         style={{
-          paddingTop: '10vh'
+          paddingTop: '5vh',
+
         }}
         container
         spacing={3}
         direction="row"
         justify="center"
         alignItems="center">
-        <Grid item xs={12}>
+        <Grid item xs={12} >
 
           <CurrentUser />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} >
 
           <form
             className={classes.root}
@@ -109,12 +110,12 @@ const UserProfile = () => {
                   <div className="file-upload">
                     <div className="file-select">
                       <div className="file-select-button" id="fileName">
-                        Choose File
+                        Profile Picture
                 </div>
                       <div className="file-select-name" id="noFile">
                         No file chosen...
                 </div>
-                      <input type="file" nameName="chooseFile" id="chooseFile" ref={ref => imageInput = ref} />
+                      <input type="file" namename="chooseFile" id="chooseFile" ref={ref => imageInput = ref} />
                     </div>
                   </div>
 
@@ -124,7 +125,7 @@ const UserProfile = () => {
                     color="blue"
                   >
                     Submit
-            </MyButton>
+                  </MyButton>
                 </Paper>
               </Grid>
 
@@ -152,7 +153,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     margin: 'auto ',
-    maxWidth: "50%",
+    maxWidth: "70%",
     color: theme.palette.text.secondary,
     marginBottom: theme.spacing(3),
     // marginTop: theme.spacing(3)

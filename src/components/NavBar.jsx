@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
-
+import { signOut } from '../firebase'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -34,12 +34,12 @@ export default function NavBar() {
           </Link>
 
           <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
-            <Button color="inherit">Home</Button>
+            <Button color="inherit">Posts</Button>
           </Link>
 
-          <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
-            <Button color="inherit">signout</Button>
-          </Link>
+
+          <Button color="inherit" onClick={signOut}>signout</Button>
+
 
         </Toolbar>
       </AppBar>

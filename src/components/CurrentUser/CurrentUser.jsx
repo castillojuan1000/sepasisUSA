@@ -17,10 +17,14 @@ import { withStyles } from '@material-ui/core/styles';
 import { signOut } from '../../firebase'
 import ProfilePic from '../../photos/welcome.jpg';
 import { Link } from 'react-router-dom'
+import { UsersContext } from '../../providers/UsersProvider'
 
 
 
-const CurrentUser = ({ uid, displayName, photoURL, email, createdAt }) => {
+const CurrentUser = () => {
+  const user = useContext(UsersContext);
+
+  const { uid, displayName, photoURL, email, createdAt } = user;
 
 
   const cardStyles = useStyles();
@@ -68,13 +72,14 @@ const CurrentUser = ({ uid, displayName, photoURL, email, createdAt }) => {
 
 export default CurrentUser;
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '50%',
-    margin: "auto"
+    maxWidth: '74%',
+    margin: "0 auto",
+
   },
   content: {
-    padding: 55
+    padding: 30
   },
   avatar: {
     width: 100,
