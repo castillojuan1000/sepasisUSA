@@ -10,6 +10,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 
 const Comment = ({ content, user, createdAt }) => {
+  console.log(createdAt)
   const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
 
   return (
@@ -27,7 +28,8 @@ const Comment = ({ content, user, createdAt }) => {
               {` — ${content}`}
               <br />
               <span style={{ color: '#7CB341' }}>
-                {moment(createdAt).calendar()}
+                {/* {createdAt} */}
+                {moment(createdAt.toDate()).calendar()}
               </span>
             </React.Fragment>
           }

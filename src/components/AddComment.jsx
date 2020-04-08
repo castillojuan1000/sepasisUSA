@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -7,35 +7,40 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import moment from 'moment'
+// import moment from 'moment'
 
 
 
 export default function AddComment({ onCreate }) {
   const classes = useStyles();
 
-
-  const [state, setState] = useState({ content: '', createdAt: moment(new Date()).calendar() });
+  const [contentForm, setContentForm] = useState('')
+  const [state, setState] = useState({ content: '', createdAt: null });
 
 
   const handleChange = event => {
-    const { name, value } = event.target;
-    setState({ [name]: value });
+    setContentForm(event.target.value)
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    const createdAt = moment(new Date()).calendar()
-    console.log(createdAt)
-
     onCreate(state)
-    setState({ content: '' });
+    setContentForm('')
   };
+
+  useEffect(() => {
+    // const commentCreatedAt = moment(new Date()).calendar();
+    const commentCreatedAt = new Date();
+    setState({
+      content: contentForm,
+      createdAt: commentCreatedAt,
+    })
+  }, [contentForm])
 
 
   console.log(state)
 
-  const { content } = state;
+
   return (
     <form
       className={classes.root}
@@ -59,7 +64,7 @@ export default function AddComment({ onCreate }) {
                 shrink: true,
               }}
               variant="outlined"
-              value={content}
+              value={contentForm}
               name="content"
               onChange={handleChange}
             />
