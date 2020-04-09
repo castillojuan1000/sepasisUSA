@@ -47,7 +47,7 @@ class PostPage extends Component {
   }
 
   createComment = (comment) => {
-    console.log(comment)
+
     //? user is comming from withUser Component/ gettign user from userProvider/ passing down in props 
     const { user } = this.props;
     this.commentsRef.add({

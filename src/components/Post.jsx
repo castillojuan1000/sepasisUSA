@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react'
+import React, { useEffect, useRef, useContext, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -9,6 +9,7 @@ import { firestore } from '../firebase'
 import moment from 'moment';
 import { UsersContext } from '../providers/UsersProvider'
 import { Link } from 'react-router-dom'
+
 
 //?Icons 
 import IconButton from '@material-ui/core/IconButton';
@@ -28,6 +29,7 @@ const deleteOnlyUser = (currentUser, postAuthor) => {
 
 export default function Post({ title, content, user, likes, dislikes, createdAt, comments, id, background }) {
   const classes = useStyles();
+  const [commentsCount, setCommentsCount] = useState(0)
 
 
   const docRef = firestore.doc(`posts/${id}`)
@@ -38,6 +40,19 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
   const addDislike = () => docRef.update({
     dislikes: dislikes + 1,
   })
+
+
+
+
+  useEffect(() => {
+    docRef.collection('comments').onSnapshot(snapshot => {
+      const comments = snapshot.docs;
+      setCommentsCount(comments.length)
+    })
+  }, [docRef])
+
+
+
 
   //******************************************************************* */
   //? Deleting post after a month(time managed in milleseconds)
@@ -133,7 +148,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                       <CommentSharpIcon style={{ color: blue[500] }} />
                     </IconButton>
                   </Link>
-                  <span style={{ color: 'rgb(32,155,229)' }}>{comments}</span>
+                  <span style={{ color: 'rgb(32,155,229)' }}>{commentsCount}</span>
                 </Grid>
 
 
@@ -166,7 +181,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     margin: 'auto',
     maxWidth: "80%",
     marginBottom: theme.spacing(2),
@@ -177,7 +192,7 @@ const useStyles = makeStyles(theme => ({
     height: 128,
   },
   avatar: {
-    margin: 'auto',
+    margin: '0 auto',
     display: 'block',
     width: theme.spacing(11),
     height: theme.spacing(11),

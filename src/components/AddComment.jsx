@@ -38,8 +38,6 @@ export default function AddComment({ onCreate }) {
   }, [contentForm])
 
 
-  console.log(state)
-
 
   return (
     <form

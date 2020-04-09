@@ -10,7 +10,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 
 const Comment = ({ content, user, createdAt }) => {
-  console.log(createdAt)
+
   const capitalizeUser = user.displayName ? (user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)) : ('');
 
   return (

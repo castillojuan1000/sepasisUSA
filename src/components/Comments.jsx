@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 
 const Comments = ({ comments, onCreate }) => {
-  console.log(comments)
+
   const classes = useStyles();
 
   const sortedComments = comments.sort((a, b) => {
