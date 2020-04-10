@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, lazy } from 'react';
 import { auth, firestore, storage } from '../firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,9 +8,12 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import CurrentUser from './CurrentUser/CurrentUser'
-
+// import CurrentUser from './CurrentUser/CurrentUser'
 import '../UserProfile.css'
+
+//code-splitting
+const CurrentUser = lazy(() => import('./CurrentUser/CurrentUser'))
+
 
 
 const UserProfile = () => {

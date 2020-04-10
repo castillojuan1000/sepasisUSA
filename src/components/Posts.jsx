@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { useContext } from 'react';
 import AddPost from './AddPost';
 import Post from './Post';
 import { PostsContext } from '../providers/PostsProvider'

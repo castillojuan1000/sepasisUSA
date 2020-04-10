@@ -45,26 +45,30 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
 
   useEffect(() => {
-    docRef.collection('comments').onSnapshot(snapshot => {
+    const unsubscribeFromFirestore = docRef.collection('comments').onSnapshot(snapshot => {
       const comments = snapshot.docs;
       setCommentsCount(comments.length)
     })
+    return () => {
+      unsubscribeFromFirestore();
+    }
   }, [docRef])
 
 
 
 
   //******************************************************************* */
-  //? Deleting post after a month(time managed in milleseconds)
-  // const now = createdAt.seconds * 1000;
-  // const monthFromNow = 2628000000;
-  // const then = now + monthFromNow;
-  // const timeLeft = then - Date.now();
+  //? Deleting post after a twoWeeks(time managed in milleseconds)
+  const now = createdAt.seconds * 1000;
+  // const monthInMilliseconds = 2628000000;
+  const week2InMilliseconds = 1210000000;
+  const then = now + week2InMilliseconds;
+  const timeLeft = then - Date.now();
 
   //?custom hook
-  // useInterval(() => {
-  //   docRef.delete();
-  // }, timeLeft);
+  useInterval(() => {
+    docRef.delete();
+  }, timeLeft);
   //?*********************************************************************
 
 

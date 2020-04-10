@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { firestore, auth } from '../firebase';
+import { firestore } from '../firebase';
 import { UsersContext } from '../providers/UsersProvider'
 
 
@@ -52,7 +52,7 @@ export default function AddPost() {
       dislikes: 0,
       createdAt: new Date()
     }
-    console.log(post)
+
 
     firestore.collection('posts').add(post)
 

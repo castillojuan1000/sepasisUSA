@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, lazy } from 'react';
 import Post from './Post'
-import Comments from './Comments'
+// import Comments from './Comments'
 import { firestore } from '../firebase'
 import { collectIdAndDocs } from '../utilities';
 import { withRouter } from 'react-router-dom'
 import withUser from './withUser'
+
+//? code-splitting
+const Comments = lazy(() => import('./Comments'))
 
 
 class PostPage extends Component {
