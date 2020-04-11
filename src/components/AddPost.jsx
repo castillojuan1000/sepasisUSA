@@ -111,7 +111,7 @@ export default function AddPost() {
               }}
               variant="outlined"
               multiline
-              rows="3"
+              rows="2"
               name="content"
               value={content}
               onChange={handleContent}

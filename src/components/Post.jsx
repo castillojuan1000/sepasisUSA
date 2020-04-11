@@ -113,7 +113,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
           justify="center"
           alignItems="center" spacing={2}>
 
-          <Grid item>
+          <Grid item style={{ padding: 0 }}>
             <Link to='/profile'>
 
               <ButtonBase className={classes.image}>
@@ -126,20 +126,20 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" justify="center"
               alignItems="center" spacing={2}>
-              <Grid item xs>
+              <Grid item xs style={{ paddingTop: 0, paddingBottom: 0 }}>
                 <Link to={`/posts/${id}`} style={{ textDecoration: 'none', color: 'black' }}>
-                  <Typography gutterBottom variant="h5">
+                  <Typography variant="button" display="block" gutterBottom className={classes.typography} style={{ color: 'white' }} >
                     {capitalizeTitle}
                   </Typography>
                 </Link>
-                <Typography variant="body2" gutterBottom>
+                <Typography variant="body2" gutterBottom className={classes.typography}>
                   {capitalizeContent}
                 </Typography>
-                <br />
-                <p>Posted by <span style={{ color: '#7CB341' }}>
+
+                <p style={{ marginBottom: 3 }}>Posted by <span style={{ color: '#7CB341' }} >
                   {capitalizeUser}</span>
                 </p>
-                <p style={{ color: '#7CB341' }}>{moment(createdAt.toDate()).calendar()}</p>
+                <p style={{ color: '#7CB341', margin: 0 }}>{moment(createdAt.toDate()).calendar()}</p>
 
               </Grid>
               <Grid item xs container direction="row" justify="center"
@@ -201,9 +201,16 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(1),
     margin: 'auto',
-    maxWidth: "80%",
+    maxWidth: "85%",
     marginBottom: theme.spacing(2),
+    overflow: 'auto'
 
+  },
+  typography: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: 0,
+      padding: 0,
+    },
   },
   image: {
     width: 128,

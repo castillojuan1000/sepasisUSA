@@ -48,7 +48,7 @@ export default function Welcome() {
       <Container maxWidth="md">
         <Grid
           style={{
-            paddingTop: '20vh'
+            paddingTop: '10vh'
           }}
           container
           spacing={3}
@@ -63,9 +63,7 @@ export default function Welcome() {
               <img src={`${SepasisImage}`} alt='sepasisUSA' style={{ width: '150px', height: '150px' }} />
 
               <Typography variant="subtitle2" gutterBottom style={{ margin: '0 auto 20px' }}>
-                Los Misioneros Servidores de la Palabra (MSP) somos una gran familia católica que ha nacido para trabajar en la tarea de la evangelización, a través de la preparación y envío de laicos y religiosos misioneros de ambos sexos.
-                <br />
-                Nuestro carisma se expresa bien en el lema: “Evangelizar a los laicos para evangelizar con los laicos”; y nuestro instrumento principal en la tarea evangelizadora es la Biblia. Todo nuestro apostolado está motivado e iluminado por la Palabra de Dios.
+                Los Misioneros Servidores de la Palabra (MSP) somos una gran familia católica que ha nacido para trabajar en la tarea de la evangelización, a través de la preparación y envío de laicos y religiosos misioneros de ambos sexos
               </Typography>
               <Grid container
 

@@ -17,13 +17,26 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
-      marginRight: theme.spacing(0),
-      fontSize: '12px'
+      marginRight: theme.spacing(1),
+      fontSize: '10px'
+    },
+  },
+  toolbar: {
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 0
     },
   },
   title: {
     flexGrow: 1,
   },
+  image: {
+    width: '100px',
+    height: '100px',
+    [theme.breakpoints.down('sm')]: {
+      width: '90px',
+      height: '90px',
+    },
+  }
 }));
 
 export default function NavBar() {
@@ -32,8 +45,8 @@ export default function NavBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
-          <img src={`${SepasisImage}`} alt='sepasisUSA' style={{ width: '90px', height: '90px' }} />
+        <Toolbar className={classes.toolbar}>
+          <img src={`${SepasisImage}`} alt='sepasisUSA' className={classes.image} />
 
           <Typography className={classes.title}></Typography>
 
