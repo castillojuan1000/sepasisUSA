@@ -17,7 +17,14 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
-      marginRight: theme.spacing(1),
+      marginRight: theme.spacing(0),
+      fontSize: '10px'
+    },
+  },
+  signOutButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(2),
       fontSize: '10px'
     },
   },
@@ -59,7 +66,7 @@ export default function NavBar() {
           </Link>
 
 
-          <Button color="inherit" onClick={signOut} className={classes.menuButton}>signout</Button>
+          <Button color="inherit" onClick={signOut} className={classes.signOutButton}>signout</Button>
 
 
         </Toolbar>

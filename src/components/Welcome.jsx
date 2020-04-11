@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     backgroundColor: 'rgba(128,128,128, 0.5)',
     zIndex: 10,
-
+    overflow: 'auto'
   },
 }));
 

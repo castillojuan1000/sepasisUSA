@@ -136,10 +136,13 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                   {capitalizeContent}
                 </Typography>
 
-                <p style={{ marginBottom: 3 }}>Posted by <span style={{ color: '#7CB341' }} >
-                  {capitalizeUser}</span>
-                </p>
-                <p style={{ color: '#7CB341', margin: 0 }}>{moment(createdAt.toDate()).calendar()}</p>
+                <div className={classes.nameAndTime}>
+
+                  <p style={{ margin: 0 }}>Posted by <span style={{ color: 'white' }} >
+                    {capitalizeUser}</span>
+                  </p>
+                  <p style={{ color: 'white', margin: 0 }}>{moment(createdAt.toDate()).calendar()}</p>
+                </div>
 
               </Grid>
               <Grid item xs container direction="row" justify="center"
@@ -222,6 +225,10 @@ const useStyles = makeStyles(theme => ({
     width: theme.spacing(11),
     height: theme.spacing(11),
   },
+  nameAndTime: {
+    marginTop: '1rem',
+    marginBottom: '1.2rem'
+  }
 }));
 
 
