@@ -11,6 +11,7 @@ import { UsersContext } from '../providers/UsersProvider'
 import { Link } from 'react-router-dom'
 
 
+
 //?Icons 
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteSharpIcon from '@material-ui/icons/FavoriteSharp';
@@ -33,7 +34,20 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
 
   const docRef = firestore.doc(`posts/${id}`)
-  const deleteDoc = () => docRef.delete();
+
+  const deleteDoc = () => {
+    docRef.delete()
+
+    //?deleting subcollection 'comments' does not work well
+    //? from the client side, i might need to create a server-side 
+    // docRef.collection('comments').onSnapshot(snapshot => {
+    //   snapshot.docs.map(doc => doc.delete())
+    // })
+
+
+  };
+
+
   const addLike = () => docRef.update({
     likes: likes + 1,
   })
@@ -58,7 +72,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
 
   //******************************************************************* */
-  //? Deleting post after a twoWeeks(time managed in milleseconds)
+  //? Deleting post after  twoWeeks(time managed in milleseconds)
   const now = createdAt.seconds * 1000;
   // const monthInMilliseconds = 2628000000;
   const week2InMilliseconds = 1210000000;

@@ -1,5 +1,6 @@
 import React from 'react';
 import WelcomeImage from '../photos/welcome.jpg'
+import SepasisImage from '../photos/sepasis2.png'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -56,15 +57,15 @@ export default function Welcome() {
           alignItems="center">
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <Typography variant="h3" gutterBottom>
+              {/* <Typography variant="h3" gutterBottom>
                 SepasisUSA
-              </Typography>
+              </Typography> */}
+              <img src={`${SepasisImage}`} alt='sepasisUSA' style={{ width: '150px', height: '150px' }} />
 
-              <Typography variant="subtitle2" gutterBottom style={{ margin: '30px auto' }}>
-                This will be a welcome paragraph
-                body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-                unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-                dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              <Typography variant="subtitle2" gutterBottom style={{ margin: '0 auto 20px' }}>
+                Los Misioneros Servidores de la Palabra (MSP) somos una gran familia católica que ha nacido para trabajar en la tarea de la evangelización, a través de la preparación y envío de laicos y religiosos misioneros de ambos sexos.
+                <br />
+                Nuestro carisma se expresa bien en el lema: “Evangelizar a los laicos para evangelizar con los laicos”; y nuestro instrumento principal en la tarea evangelizadora es la Biblia. Todo nuestro apostolado está motivado e iluminado por la Palabra de Dios.
               </Typography>
               <Grid container
 

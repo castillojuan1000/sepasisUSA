@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 // import CurrentUser from './CurrentUser/CurrentUser'
 import '../UserProfile.css'
 
-//code-splitting
+//?code-splitting
 const CurrentUser = lazy(() => import('./CurrentUser/CurrentUser'))
 
 
