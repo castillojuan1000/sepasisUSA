@@ -1,6 +1,6 @@
 import React from 'react';
 import WelcomeImage from '../photos/welcome.jpg'
-import SepasisImage from '../photos/sepasis2.png'
+import SepasisImage from '../photos/sepasis1.png'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -27,7 +27,13 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     backgroundColor: 'rgba(128,128,128, 0.5)',
     zIndex: 10,
-    overflow: 'auto'
+    [theme.breakpoints.down('sm')]: {
+      overflow: 'auto',
+      padding: theme.spacing(0),
+      height: '80vh'
+    },
+
+
   },
 }));
 
@@ -63,7 +69,10 @@ export default function Welcome() {
               <img src={`${SepasisImage}`} alt='sepasisUSA' style={{ width: '150px', height: '150px' }} />
 
               <Typography variant="subtitle2" gutterBottom style={{ margin: '0 auto 20px' }}>
-                Los Misioneros Servidores de la Palabra (MSP) somos una gran familia católica que ha nacido para trabajar en la tarea de la evangelización, a través de la preparación y envío de laicos y religiosos misioneros de ambos sexos
+                Los Sepasis somos una grupo de jovenes Catolicos que ha nacido para trabajar en la tarea de la evangelización con las hermanientas dadas despues de nuestra experiecia misionera.
+                <br />
+                <br />
+                Si tu eres un herman@ sepasi te invitamos a unirte a este espacio creado para compartir eventos, experiencias y acompañarnos en oracios unos con los otros.
               </Typography>
               <Grid container
 

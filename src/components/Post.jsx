@@ -114,7 +114,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
           alignItems="center" spacing={2}>
 
           <Grid item style={{ padding: 0 }}>
-            <Link to='/profile'>
+            <Link to='/'>
 
               <ButtonBase className={classes.image}>
                 <Avatar alt="Remy Sharp" src={profilePic} className={classes.avatar} />
@@ -145,18 +145,18 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                 </div>
 
               </Grid>
-              <Grid item xs container direction="row" justify="center"
+              <Grid item xs container direction="row" justify="flex-start"
                 alignItems="center" spacing={1}>
 
                 <Grid item>
-                  <IconButton onClick={addLike}>
+                  <IconButton onClick={addLike} className={classes.optionButtons}>
                     <FavoriteSharpIcon style={{ color: blue[500] }} />
                   </IconButton>
                   <span style={{ color: 'rgb(32,155,229)' }}>{likes}</span>
                 </Grid>
 
                 <Grid item>
-                  <IconButton onClick={addDislike}>
+                  <IconButton onClick={addDislike} className={classes.optionButtons}>
                     <ThumbDownSharpIcon style={{ color: blue[500] }} />
                   </IconButton>
                   <span style={{ color: 'rgb(32,155,229)' }}>{dislikes}</span>
@@ -165,7 +165,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                 <Grid item>
                   <Link to={`/posts/${id}`} style={{ textDecoration: 'none' }}>
 
-                    <IconButton>
+                    <IconButton className={classes.optionButtons}>
                       <CommentSharpIcon style={{ color: blue[500] }} />
                     </IconButton>
                   </Link>
@@ -177,7 +177,8 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                   deleteOnlyUser(currentUser, user) &&
                   <Grid item>
                     <IconButton
-                      onClick={deleteDoc}>
+                      onClick={deleteDoc}
+                      className={classes.optionButtons}>
                       <DeleteForeverSharpIcon style={{ color: red[500] }} />
                     </IconButton>
                   </Grid>
@@ -228,6 +229,10 @@ const useStyles = makeStyles(theme => ({
   nameAndTime: {
     marginTop: '1rem',
     marginBottom: '1.2rem'
+  },
+  optionButtons: {
+    paddingRight: 1,
+    paddingLeft: 12,
   }
 }));
 

@@ -10,8 +10,8 @@ export default function UserIsAuth() {
     <>
       <Navbar />
       <Switch>
-        <Route exact path='/' component={Posts} />
-        <Route exact path='/profile' component={UserProfile} />
+        <Route exact path='/' component={UserProfile} />
+        <Route exact path='/posts' component={Posts} />
         <Route exact path='/posts/:id' component={PostPage} />
       </Switch>
     </>

@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
 import { signOut } from '../firebase'
-import SepasisImage from '../photos/sepasis2.png'
+import SepasisImage from '../photos/sepasis1.png'
 import { Typography } from '@material-ui/core';
 
 
@@ -57,11 +57,11 @@ export default function NavBar() {
 
           <Typography className={classes.title}></Typography>
 
-          <Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>
+          <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
             <Button color="inherit" className={classes.menuButton}>Profile</Button>
           </Link>
 
-          <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+          <Link to='/posts' style={{ textDecoration: 'none', color: 'white' }}>
             <Button color="inherit" className={classes.menuButton}>Posts</Button>
           </Link>
 

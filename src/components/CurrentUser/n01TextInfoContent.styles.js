@@ -13,7 +13,7 @@ export default ({ palette }) => ({
     marginBottom: "0.4em"
   },
   body: {
-    fontSize: 16,
+    fontSize: 12,
     color: "rgba(0,0,0,0.72)"
   }
 });
