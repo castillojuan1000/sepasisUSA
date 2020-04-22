@@ -145,7 +145,7 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
                 </div>
 
               </Grid>
-              <Grid item xs container direction="row" justify="flex-start"
+              <Grid item xs container direction="row" justify="center"
                 alignItems="center" spacing={1}>
 
                 <Grid item>

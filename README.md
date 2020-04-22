@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SepasisUSA
 
-## Available Scripts
+ ![Project Image](src/photos/sepasis1.png)
 
-In the project directory, you can run:
+ 
 
-### `npm start`
+ ---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ ### Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [Author Info](#author-info)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Description
 
-### `npm run build`
+SepasisUSA is a small personalize social app design for a small group of people who share a common experience. The purpose of this application is to bring them closer together with this space created just for them. The app consist of creating an account, which then will redirect them to a profile page where they can change and update their profile pic and name. The posts page is where people share their thoughts, upcomming events, prayers, or just siply share their experience. Once the post has been created people can comment on it, like it or dislike it.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Technologies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- React 
+- JavaScript 
+- Firebase
+- CSS 
+- Material-UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### New Features Comming Soon
+- Users will be able to share links, photos, and videos.
+- A page where user can see all the user using the application
+- A Events page 
+- A Prayer page where users can request to pray for them
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How To Use
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Installation 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `git clone https://github.com/castillojuan1000/sepasisUSA`
+- `npm install`
+- `npm start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### API Resources 
 
-## Learn More
+--- 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author Info
+ - LinkedIn [LinkedIn](https://www.linkedin.com/in/juan-m-castillo-355403186/)
+ - Website [JuanCastillo](https://juancastillo.dev/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ [Back To The Top](#sepasisUSA)

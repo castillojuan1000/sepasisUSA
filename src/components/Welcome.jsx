@@ -69,10 +69,10 @@ export default function Welcome() {
               <img src={`${SepasisImage}`} alt='sepasisUSA' style={{ width: '150px', height: '150px' }} />
 
               <Typography variant="subtitle2" gutterBottom style={{ margin: '0 auto 20px' }}>
-                Los Sepasis somos una grupo de jovenes Catolicos que ha nacido para trabajar en la tarea de la evangelización con las hermanientas dadas despues de nuestra experiecia misionera.
+                Los Sepasis somos una grupo de jovenes Catolicos que an nacido para trabajar en la tarea de la evangelización con las herramientas dadas despues de nuestra experiecia misionera.
                 <br />
                 <br />
-                Si tu eres un herman@ sepasi te invitamos a unirte a este espacio creado para compartir eventos, experiencias y acompañarnos en oracios unos con los otros.
+                Si tu eres un joven sepasi te invitamos a unirte a este espacio creado para compartir eventos, experiencias y acompañarnos en oracios unos con los otros.
               </Typography>
               <Grid container
 
