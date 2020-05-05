@@ -72,17 +72,18 @@ export default function Post({ title, content, user, likes, dislikes, createdAt,
 
 
   //******************************************************************* */
-  //? Deleting post after  twoWeeks(time managed in milleseconds)
-  const now = createdAt.seconds * 1000;
-  // const monthInMilliseconds = 2628000000;
-  const week2InMilliseconds = 1210000000;
-  const then = now + week2InMilliseconds;
-  const timeLeft = then - Date.now();
+  //? Deleting post after  twoWeeks(time managed in milleseconds) 
+  //! in production does not work, it keeps rendering 
+  // const now = createdAt.seconds * 1000;
+  // // const monthInMilliseconds = 2628000000;
+  // const week2InMilliseconds = 1210000000;
+  // const then = now + week2InMilliseconds;
+  // const timeLeft = then - Date.now();
 
-  //?custom hook
-  useInterval(() => {
-    docRef.delete();
-  }, timeLeft);
+  // //?custom hook
+  // useInterval(() => {
+  //   docRef.delete();
+  // }, timeLeft);
   //?*********************************************************************
 
 
