@@ -6,7 +6,8 @@
 
  ---
 
- ![](sepasisUSA.mov)
+ ## Demo
+ ![Demo](sepasis.gif)
 
  ### Table of Contents
 
