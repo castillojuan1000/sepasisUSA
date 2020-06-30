@@ -1,6 +1,5 @@
-# SepasisUSA
+# SepasisUSA   ![Project Image](src/photos/sepasis1.png)
 
- ![Project Image](src/photos/sepasis1.png)
 
  
 
@@ -19,7 +18,7 @@
 
 ## Description
 
-SepasisUSA is a small personalize social app design for a small group of people who share a common experience. The purpose of this application is to bring them closer together with this space created just for them. The app consist of creating an account, which then will redirect them to a profile page where they can change and update their profile pic and name. The posts page is where people share their thoughts, upcomming events, prayers, or just siply share their experience. Once the post has been created people can comment on it, like it or dislike it.
+SepasisUSA is a social application created with React as our Front End and Firebase as our database. It provides the main functions you'd expect from a social application, such as sharing post, commenting on post, the ability to change your profile pic and name, and much more. 
 
 #### Technologies
 
@@ -31,9 +30,9 @@ SepasisUSA is a small personalize social app design for a small group of people 
 
 #### New Features Comming Soon
 - Users will be able to share links, photos, and videos.
-- A page where user can see all the user using the application
-- A Events page 
-- A Prayer page where users can request to pray for them
+- A page where users can see all the users using the application
+- An Events page 
+- A Prayer page where users can request prayers
 
 ---
 
@@ -41,9 +40,9 @@ SepasisUSA is a small personalize social app design for a small group of people 
 
 #### Installation 
 
-- `git clone https://github.com/castillojuan1000/sepasisUSA`
-- `npm install`
-- `npm start`
+- clone this repo to your desktop `git clone https://github.com/castillojuan1000/sepasisUSA`
+- run `npm install` to install all the dependencies
+- run `npm start` to start the application
 
 ### API Resources 
 
