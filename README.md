@@ -16,7 +16,7 @@
 
 ## Description
 
-SepasisUSA is a social application created with React as our Front End and Firebase as our database. It provides the main functions you'd expect from a social application, such as sharing post, commenting on post, the ability to change your profile pic and name, and much more. 
+SepasisUSA is a social application created with React for our Front End and Firebase for our database. It provides the main functions you'd expect from a social application, such as sharing post, commenting on post, the ability to change your profile pic and name, and much more. 
 
 #### Technologies
 
