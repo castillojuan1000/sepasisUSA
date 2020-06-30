@@ -1,9 +1,7 @@
-# SepasisUSA                    ![Project Image](src/photos/sepasis1.png)
+# SepasisUSA                    
+<!-- ![Project Image](src/photos/sepasis1.png) -->
 
 
- 
-
- ---
 
  ## Demo
  ![Demo](sepasis.gif)
