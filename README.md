@@ -1,10 +1,7 @@
 # SepasisUSA                    
-<!-- ![Project Image](src/photos/sepasis1.png) -->
+![Project Image](src/photos/sepasis1.png)
 
 
-
- ## Demo
- ![Demo](sepasis.gif)
 
  ### Table of Contents
 
@@ -16,7 +13,7 @@
 
 ## Description
 
-SepasisUSA is a social application created with React for our Front End and Firebase for our database. It provides the main functions you'd expect from a social application, such as sharing post, commenting on post, the ability to change your profile pic and name, and much more. 
+SepasisUSA is a social application created with React for our Front End and Firebase for our database. It provides the main functions you'd expect from a social application, such as sharing post, commenting on posts, the ability to change your profile picture and name, and much more. 
 
 #### Technologies
 
@@ -31,6 +28,9 @@ SepasisUSA is a social application created with React for our Front End and Fire
 - A page where users can see all the users using the application
 - An Events page 
 - A Prayer page where users can request prayers
+
+ ### Demo
+ ![Demo](sepasis.gif)
 
 ---
 
